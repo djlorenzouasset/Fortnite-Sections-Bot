@@ -35,8 +35,8 @@ class TimelineUpdates:
         if fortnite_content and timeline:
             try:
                 cache_expire: str = timeline['channels']['client-events']['cacheExpire']
-                dailyStoreEnd: str = timeline['channels']['client-events']['states'][-1]['state']['dailyStoreEnd']
-                sectionsList: dict = timeline['channels']['client-events']['states'][-1]['state']['sectionStoreEnds']
+                dailyStoreEnd: str = timeline['channels']['client-events']['states'][1]['state']['dailyStoreEnd']
+                sectionsList: dict = timeline['channels']['client-events']['states'][1]['state']['sectionStoreEnds']
                 sectionIds: List[dict] = fortnite_content['shopSections']['sectionList']['sections']
 
 
