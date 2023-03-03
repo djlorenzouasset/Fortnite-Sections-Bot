@@ -46,7 +46,7 @@ A bot that automatically post <b>shop sections</b> in your twitter account.
 
 # Credits
 
-Used APIs: [Fortnite Content](https://fortnitecontent-website-prod07.ol.epicgames.com), [Epic Games Timeline](https://fortnite-public-service-prod11.ol.epicgames.com)
+Used APIs: [Fortnite Content](https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game), [Epic Games Timeline](https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/calendar/v1/timeline)
 
 
 # Support
