@@ -1,0 +1,6 @@
+aiofiles
+apscheduler
+coloredlogs
+tweepy
+aiohttp
+logging
