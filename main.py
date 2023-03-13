@@ -46,7 +46,7 @@ class Main:
 
 
         # initialize settings in a class
-        self.settings = Settings(await self.util.open(file='utils/config.json', mode='r', is_json=True))
+        self.settings = Settings(await self.util.open(file='utils/config.json', mode='r', encoding='utf-8', is_json=True))
 
 
         try:
