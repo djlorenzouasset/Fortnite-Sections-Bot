@@ -59,12 +59,12 @@ class Main:
             exit()
 
         except MissingAuthCredentials:
-            self.log.error('You have not provided the required Auth credentials. If you are having issues, please open an issue on GitHub.')
+            self.log.error('You have not provided the required Auth credentials, opened the settings file. If you are having issues, please open an issue on GitHub.')
             await asyncio.sleep(5)
             exit()
 
         except MissingTwitterCredentials:
-            self.log.error('You have not provided the required Twitter credentials. If you are having issues, please open an issue on GitHub.')
+            self.log.error('You have not provided the required Twitter credentials, opened the settings file. If you are having issues, please open an issue on GitHub.')
             await asyncio.sleep(5)
             exit()
 
@@ -89,18 +89,24 @@ class Main:
             await asyncio.sleep(5)
             exit()
         
-        self.log.info('Press enter for start the task')
-        input() # empty input for start the task
 
-        # start the scheduler
-        if self.settings.seconds == 0 or self.settings.seconds == '':
-            self.settings.seconds = 50
-        elif isinstance(self.settings.seconds, str):
-            self.settings.seconds = int(self.settings.seconds)
+        self.log.info('Want start the checks task? (y/n)')
+        choice = input() # empty input for start the task
 
-        self.scheduler.add_job(self.timeline_checker, 'interval', seconds=self.settings.seconds) # set how much seconds you want to check for updates
-        self.scheduler.start()
-        self.log.info('Scheduler started!')
+        if choice.lower() == 'y':
+            # start the scheduler
+            if self.settings.seconds == 0 or self.settings.seconds == '':
+                self.settings.seconds = 50
+            elif isinstance(self.settings.seconds, str):
+                self.settings.seconds = int(self.settings.seconds)
+
+            self.scheduler.add_job(self.timeline_checker, 'interval', seconds=self.settings.seconds) # set how much seconds you want to check for updates
+            self.scheduler.start()
+            self.log.info('Scheduler started!')
+
+        else:
+            self.log.info('Exiting..')
+            exit()
 
 
     async def timeline_checker(self):

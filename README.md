@@ -44,16 +44,11 @@ A bot that automatically post <b>shop sections</b> in your twitter account.
 }
 ```
 
-# Credits
-
-Used APIs: [Fortnite Content](https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game), [Epic Games Timeline](https://fortnite-public-service-prod11.ol.epicgames.com/fortnite/api/calendar/v1/timeline)
-
-
 # Support
 
 If you need support you can contact me on:
 - [Twitter](https://twitter.com/djlorenzouasset) 
 - [Telegram](https://t.me/djlorenzouasset)
-- [Discord](discord.gg/BreVGmCdef)
+- [Discord](https://discord.com/users/584349337497108480)
 
-Or just open an issue in the repository.
+Or just open an issue/pull request in the repository.

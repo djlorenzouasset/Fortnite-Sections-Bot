@@ -58,7 +58,7 @@ class TimelineUpdates:
                             else:
                                 sections_names.append(f'• {section} (x{sections.count(section)})')
 
-
+                        # don't change nothing here. If you have to change the tweet text just go in the settings.json file and change the title and the footer
                         finished: str = '\n'.join(set(sections_names))
                         text: str = ''
 

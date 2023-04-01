@@ -1,5 +1,6 @@
 import json
 import aiofiles
+import os 
 
 from models.errors import MissingAuthCredentials, MissingTwitterCredentials, LanguageNotFound
 from models.settings import Settings, Twitter
@@ -79,6 +80,7 @@ class Util:
 
         
         elif settings.auth.device_id == '' or settings.auth.account_id == '' or settings.auth.secret == '':
+            os.open('settings.json')
             raise MissingAuthCredentials
 
 
@@ -86,5 +88,6 @@ class Util:
             data: Twitter = settings.twitter
 
             if not data.apiKey or not data.apiSecret or not data.accessToken or not data.accessTokenSecret:
+                os.open('settings.json')
                 raise MissingTwitterCredentials
         
