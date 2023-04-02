@@ -108,6 +108,7 @@ class Util:
         if file_content.status == 200:
             file_content = json.loads(await file_content.text())
             local_content = await self.open(file='version.json', is_json=True)
+            await session.close()
 
             if file_content['current'] != local_content['current']:
                 self.log.warn(f'There is a new update available. Download it from https://github.com/djlorenzouasset/Fortnite-Sections-Bot.\n\nCurrent version: {local_content["current"]}\nNew version: {file_content["current"]}')
