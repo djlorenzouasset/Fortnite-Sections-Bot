@@ -106,7 +106,7 @@ class Util:
         )
 
         if file_content.status == 200:
-            file_content = json.dumps(await file_content.text(), indent=4)
+            file_content = json.loads(await file_content.text())
             local_content = await self.open(file='version.json', is_json=True)
 
             if file_content['current'] != local_content['current']:
