@@ -1,14 +1,15 @@
 import json
 import aiofiles
 import os 
+import aiohttp
 
 from models.errors import MissingAuthCredentials, MissingTwitterCredentials, LanguageNotFound
 from models.settings import Settings, Twitter
 
-
 class Util:
     def __init__(self, log):
         self.log = log
+
 
     
     async def open(self, file: str, mode: str = 'r', encoding: str = None, is_json: bool = False) -> str:
@@ -91,3 +92,23 @@ class Util:
                 os.open('settings.json')
                 raise MissingTwitterCredentials
         
+    
+    async def check_updates(self) -> None:
+        """
+        Check for updates.
+        """
+
+        session = aiohttp.ClientSession()
+
+        file_content = await session.request(
+            method='GET',
+            url=f'https://raw.githubusercontent.com/djlorenzouasset/Fortnite-Sections-Bot/main/version.json'
+        )
+
+        if file_content.status == 200:
+            file_content = await file_content.json()
+            local_content = await self.open(file='version.json', is_json=True)
+
+            if file_content['current'] != local_content['current']:
+                self.log.warn(f'There is a new update available. Download it from https://github.com/djlorenzouasset/Fortnite-Sections-Bot.\n\nCurrent version: {local_content["current"]}\nNew version: {file_content["current"]}')
+                await self.write(file='version.json', content=file_content, is_json=True)

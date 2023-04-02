@@ -38,6 +38,7 @@ class Main:
         )
 
         self.log.info('Loading components..')
+        await self.util.check_updates()
 
         if not os.path.isfile('utils/config.json'): # check if config file exists, if not the application exit.            
             self.log.error('Config file not found. The application will now exit. If you are having issues, please open an issue on GitHub.')
