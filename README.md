@@ -52,3 +52,7 @@ If you need support you can contact me on:
 - [Discord](https://discord.com/users/584349337497108480)
 
 Or just open an issue/pull request in the repository.
+
+## Credits:
+
+- Localization.json file from [Swift-Nite](https://github.com/swiftnite)
