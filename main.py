@@ -88,6 +88,7 @@ class Main:
             
             self.scheduler.add_job(self.timeline_checker, 'interval', seconds=self.settings.seconds) # set how much seconds you want to check for updates
             self.scheduler.start()
+            os.system('cls')
             log.info('Scheduler started!')
         else:
             log.info('Exiting..')
