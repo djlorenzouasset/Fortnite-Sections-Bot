@@ -1,0 +1,22 @@
+{
+    "language": "en",
+    "seconds_per_task": 50,
+    "auth": {
+        "device_id": "",
+        "account_id": "",
+        "secret": ""
+    },
+    "twitter": {
+        "enabled": false,
+        "apiKey": "",
+        "apiSecret": "",
+        "accessToken": "",
+        "accessTokenSecret": ""
+    },
+    "sections": {
+        "image": false,
+        "show_if_one": true,
+        "title": "New #Fortnite shop sections:",
+        "footer": ""
+    }
+}
