@@ -1,4 +1,7 @@
-# Fortnite Shop Sections Bot
+# [DEPRECATED] Fortnite Shop Sections Bot
+
+> ⚠️ This repository is deprecated since Epic Games doesn't update the sections endpoint anymore.
+
 A bot that automatically post <b>shop sections</b> in your twitter account.
 
 
